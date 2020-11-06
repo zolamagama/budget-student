@@ -1,0 +1,135 @@
+<div class="container">
+	<title>BUDGET</title>
+
+	<div class="row">
+	<link rel="stylesheet" href="css/budget.css">
+</head>
+
+<body>
+	<div class="container">
+		 <form action="/budget" method="POST">
+		<!-- <h1><u>BUDGETING STUDENT</u></h1>
+		
+	
+		Your budget! <input type="text" name="nameValue"  class="amount" placeholder="">
+		<br><br>
+	
+
+	<div class='Essentials'>
+		<h2>ESSENTIALS</h2>
+		<ul>
+			<li>Rent <input type="text" name="nameValue"  class="rent" placeholder="enter amount"></li>
+		<li>Food <input type="text" name="nameValue"  class="food" placeholder=""></li>
+		<li>Transport <input type="text" name="nameValue"  class="transport" placeholder=""></li>	
+			</ul>
+	</div>
+
+	<div class='Non-Essentials'>
+		<h2>NON-ESSENTIALS</h2>
+		<ul>
+			
+		 <li><input type="text" name="nameValue"  class="rent" placeholder=""></li>
+		 <li><input type="text" name="nameValue"  class="food" placeholder=""></li>
+	 <li><input type="text" name="nameValue"  class="transport" placeholder="">	</li>
+			</ul>
+	</div> -->
+
+		<div class="twelve columns box">
+			<form action="/budget" method="POST">
+				<h1>BUDGETING STUDENT</h1>
+
+				<hr>
+
+
+				<div>
+					<strong>Budget</strong>
+					{{budget.income}}
+				</div>
+
+				<div>
+					<strong>Amount left:</strong>
+					{{budget.amountLeft}}
+				</div>
+
+				<div class="row">
+
+					<div class="six columns box">
+						<h2>EXPENSES</h2>
+
+						<br>
+
+						<li><input type="text" name="expenseName" class="rent" placeholder=""></li>
+
+
+						<input class="u-full-width rentSetting" required type="number" name="cost" placeholder=""
+							value="{{settings.rentCost}}"></li>
+						<br>
+						<button class="button-primary" type="submit" name="button">Add</button>
+
+						<hr>
+
+						<ul>
+							{{#each budget.items}}
+							<li> {{name}} : {{cost}} </li>
+							{{/each}}
+						</ul>
+
+						<strong>Total expenses:</strong>
+						<span class="total ">R<span class="budgetTotal">{{budget.total}}</span> </span>
+
+
+
+						<hr>
+
+						<button class="button-primary" type='submit' name="button">Proceed</button>
+					</div>
+
+
+			</form>
+
+			<canvas id="myChart" width="200" height="200"></canvas>
+
+
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+			<script>
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: {{{labels}}},
+        datasets: [{
+            label: '# of Votes',
+            data: {{data}},
+				backgroundColor: [
+					'rgba(255, 99, 132, 0.2)',
+					'rgba(54, 162, 235, 0.2)',
+					'rgba(255, 206, 86, 0.2)',
+					'rgba(75, 192, 192, 0.2)',
+					'rgba(153, 102, 255, 0.2)',
+					'rgba(255, 159, 64, 0.2)'
+				],
+				borderColor: [
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(153, 102, 255, 1)',
+					'rgba(255, 159, 64, 1)'
+				],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+		</div>
+	</div>
+</div>

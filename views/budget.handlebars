@@ -1,0 +1,77 @@
+<title>BUDGET</title>
+
+<div class="row">
+
+    <div class="twelve columns box">
+        <form action="/budget" method="POST">
+            <h1>BUDGETING STUDENT</h1>
+
+            <hr>
+
+            {{!-- Your budget! <input required type="number" name="budgetAmount" value="{{settings.budgetAmount}}"
+				placeholder="enter your budget">
+			<br><br> --}}
+
+            <div class="row">
+
+                <div class="six columns box">
+                    <h2>EXPENSES</h2>
+                    {{!-- <ul>
+						<li>Rent <input class="u-full-width rentSetting" required type="number" name="rentCost"
+								placeholder="" value="{{settings.rentCost}}"></li>
+						<li>Food <input class="u-full-width foodSetting" required type="number" name="groceryCost"
+								placeholder="" value="{{settings.groceryCost}}"></li>
+						<li>Transport <input class="u-full-width transportSetting" required type="number"
+								name="transportCost" placeholder="" value="{{settings.transportCost}}"></li>
+					</ul>
+					<button class="button-primary" type="submit" name="button">Add</button> --}}
+                    <br>
+                    {{!-- <strong>Total essentials:</strong>
+					<span class="total ">R<span class="budgetTotal">{{totals.totalExpenses}}</span> </span> --}}
+
+
+                    {{!-- <h2>NON-ESSENTIALS</h2>
+					<ul>
+
+						<li><input type="text" name="nameValue" class="rent" placeholder=""></li>
+						<li><input type="text" name="nameValue" class="food" placeholder=""></li>
+						<li><input type="text" name="nameValue" class="transport" placeholder=""> </li>
+					</ul>
+					<button class="button-primary" type="submit" name="button">Add</button>
+<br>
+					<strong>Total non-essentials:</strong>
+					<span class="total ">R<span class="budgetTotal">0.00</span> </span> --}}
+                    <li><input type="text" name="expense_name" class="" placeholder=""></li>
+
+
+                    <input class="u-full-width rentSetting" required type="number" name="cost" placeholder=""
+                        value="{{settings.rentCost}}"></li>
+                    <br>
+                    <button class="button-primary" type="submit" name="button">Add</button>
+
+                        <hr>
+
+                    <ul>    
+                        {{#each budget.items}}
+                        <li> {{name}} : {{cost}} </li>
+                        {{/each}}
+                    </ul>
+
+
+                    <strong>Total expenses:</strong>
+                    <span class="total ">R<span class="budgetTotal">{{budget.total}}</span> </span>
+
+
+
+                    <hr>
+
+                    <button class="button-primary" type='submit' name="button">Proceed</button>
+
+
+
+        </form>
+
+    </div>
+</div>
+</div>
+</div>

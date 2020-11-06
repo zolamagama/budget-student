@@ -1,0 +1,16 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	background-color: thistle;
+}
+
+.h1 {
+    text-align: center;
+    
+}
+
+.container {
+	background-color: whitesmoke;
+	/* background-image: url(https://image.shutterstock.com/image-photo/budget-capital-finance-economy-investment-600w-390084256.jpg)  */
+
+}
